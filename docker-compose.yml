@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MILLENNIUM_FALCON_CONFIG=/data/millennium-falcon.json
+    volumes:
+      - ./examples/${EXAMPLE:-example1}:/data:ro
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  cli:
+    build:
+      context: .
+      dockerfile: docker/cli.Dockerfile
+    volumes:
+      - ./examples:/data:ro
+    profiles:
+      - cli

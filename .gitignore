@@ -1,0 +1,29 @@
+node_modules/
+dist/
+.env
+*.local
+
+# Build outputs
+packages/*/dist/
+packages/web/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+coverage/
+
+# Cypress
+packages/web/cypress/videos/
+packages/web/cypress/screenshots/

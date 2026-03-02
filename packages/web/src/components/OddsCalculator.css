@@ -1,0 +1,139 @@
+.odds-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  color: var(--color-primary-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.drop-zone {
+  position: relative;
+  border: 2px dashed var(--color-border);
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.drop-zone:hover {
+  border-color: var(--color-primary-dim);
+  background: rgba(255, 215, 0, 0.03);
+}
+
+.drop-zone--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.drop-zone__input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.drop-zone__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.drop-zone__icon {
+  font-size: 1.5rem;
+  color: var(--color-primary-dim);
+}
+
+.drop-zone__filename {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.result {
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.result--loading {
+  color: var(--color-primary);
+}
+
+.result--success {
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.result--error {
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  background: rgba(255, 68, 68, 0.05);
+}
+
+.result__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.result__value {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 0 30px currentColor;
+}
+
+.result__bar {
+  margin-top: 1.25rem;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.result__bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.result__message {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+.result__message--success {
+  color: var(--color-success);
+}
+
+.result__message--danger {
+  color: var(--color-danger);
+}
+
+.result__error-msg {
+  color: var(--color-danger);
+  font-size: 0.9rem;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

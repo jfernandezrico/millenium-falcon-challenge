@@ -1,0 +1,21 @@
+{
+  "name": "millenium-falcon-challenge",
+  "private": true,
+  "workspaces": [
+    "packages/backend",
+    "packages/cli",
+    "packages/web"
+  ],
+  "scripts": {
+    "build": "npm run build -w packages/backend && npm run build -w packages/cli && npm run build -w packages/web",
+    "build:backend": "npm run build -w packages/backend",
+    "build:cli": "npm run build -w packages/backend && npm run build -w packages/cli",
+    "build:web": "npm run build -w packages/web",
+    "start:backend": "npm run start -w packages/backend",
+    "start:web": "npm run dev -w packages/web",
+    "test": "npm run test -ws --if-present",
+    "test:unit": "npm run test:unit -ws --if-present",
+    "test:integration": "npm run test:integration -ws --if-present",
+    "lint": "npm run lint -ws --if-present"
+  }
+}
