@@ -88,10 +88,10 @@ A React + Vite single-page application with a Star Wars terminal aesthetic. Call
                                       │
           ┌───────────────────────────┤
           │                           │
-    ┌─────▼─────┐              ┌──────▼──────┐
-    │    Web     │──POST /api──│   Backend   │
+    ┌─────▼─────┐             ┌───────▼─────┐
+    │    Web    │──POST /api──│   Backend   │
     │  (C-3PO)  │   /odds     │  (NestJS)   │
-    └───────────┘              └──────┬──────┘
+    └───────────┘             └───────┬─────┘
                                       │
                                ┌──────▼──────┐
                                │   Domain    │
@@ -99,7 +99,7 @@ A React + Vite single-page application with a Star Wars terminal aesthetic. Call
                                └──────┬──────┘
                                       │
                                ┌──────▼──────┐
-                               │  universe.db │
+                               │ universe.db │
                                │  (SQLite)   │
                                └─────────────┘
 ```
